@@ -42,12 +42,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Factories\IObjectFactory.cs" />
-    <Compile Include="Factories\ObjectFactory.cs" />
-    <Compile Include="Objects\BaseObject.cs" />
-    <Compile Include="Objects\ConcreteObjectA.cs" />
-    <Compile Include="Objects\ConcreteObjectB.cs" />
-    <Compile Include="Objects\IObject.cs" />
+    <Compile Include="Factories\IItemFactory.cs" />
+    <Compile Include="Factories\ItemFactory.cs" />
+    <Compile Include="Items\BaseItem.cs" />
+    <Compile Include="Items\ConcreteItemA.cs" />
+    <Compile Include="Items\ConcreteItemB.cs" />
+    <Compile Include="Items\IItem.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

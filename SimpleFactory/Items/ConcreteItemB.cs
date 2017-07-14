@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace SimpleFactory.Objects
+namespace SimpleFactory.Items
 {
-    public class ConcreteObjectB : BaseObject, IObject
+    public class ConcreteItemB : BaseItem, IItem
     {
         public override void SampleMethod()
         {

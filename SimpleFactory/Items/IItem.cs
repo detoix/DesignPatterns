@@ -1,6 +1,6 @@
-﻿namespace SimpleFactory.Objects
+﻿namespace SimpleFactory.Items
 {
-    public interface IObject
+    public interface IItem
     {
         int SampleParameter { get; set; }
         void SampleMethod();

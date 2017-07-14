@@ -1,8 +1,8 @@
 ﻿using System.Linq;
 
-namespace SimpleFactory.Objects
+namespace SimpleFactory.Items
 {
-    public abstract class BaseObject : IObject
+    public abstract class BaseItem : IItem
     {
         public int SampleParameter { get; set; }
 

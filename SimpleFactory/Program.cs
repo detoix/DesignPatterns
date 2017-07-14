@@ -7,9 +7,9 @@ namespace SimpleFactory
     {
         static void Main(string[] args)
         {
-            var objA = new ObjectFactory().Build(ObjectType.ConcreteObjectA);
-            var objB = new ObjectFactory().Build(ObjectType.ConcreteObjectB, 0);
-            objA.SampleMethod();
+            var itemA = new ItemFactory().Build(ItemType.ConcreteObjectA);
+            var itemB = new ItemFactory().Build(ItemType.ConcreteObjectB, 0);
+            itemA.SampleMethod();
             Console.Read();
         }
     }
