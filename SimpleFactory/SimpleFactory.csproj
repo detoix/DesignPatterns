@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{08609FB4-8A50-4627-8C96-8E7ABFFCCBF6}</ProjectGuid>
+    <ProjectGuid>{CFDC5D9F-4DE6-4FD6-BE3B-12B2086A6593}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>DesignPatterns</RootNamespace>
-    <AssemblyName>DesignPatterns</AssemblyName>
+    <RootNamespace>SimpleFactory</RootNamespace>
+    <AssemblyName>SimpleFactory</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -42,6 +42,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Factories\IObjectFactory.cs" />
+    <Compile Include="Factories\ObjectFactory.cs" />
+    <Compile Include="Objects\BaseObject.cs" />
+    <Compile Include="Objects\ConcreteObjectA.cs" />
+    <Compile Include="Objects\ConcreteObjectB.cs" />
+    <Compile Include="Objects\IObject.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

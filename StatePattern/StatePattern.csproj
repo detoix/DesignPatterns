@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A4974076-08BC-4D38-BCEF-444774351DFA}</ProjectGuid>
+    <ProjectGuid>{AA1E24D4-8F86-42F0-9352-8266D4ADAE4F}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Factory_Method</RootNamespace>
-    <AssemblyName>Factory Method</AssemblyName>
+    <RootNamespace>StatePattern</RootNamespace>
+    <AssemblyName>StatePattern</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
