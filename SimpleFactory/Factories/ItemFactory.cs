@@ -13,15 +13,14 @@ namespace SimpleFactory.Factories
     {
         public IDictionary<ItemType, IItem> AvailableObjects { get; set; }
         public int SampleParameter { get; set; }
-        
 
         public ItemFactory()
         {
             this.AvailableObjects = new Dictionary<ItemType, IItem>()
-                {
-                    { ItemType.ConcreteObjectA, new ConcreteItemA() },
-                    { ItemType.ConcreteObjectB, new ConcreteItemB() },
-                };
+            {
+                { ItemType.ConcreteObjectA, new ConcreteItemA() },
+                { ItemType.ConcreteObjectB, new ConcreteItemB() },
+            };
         }
 
         public IItem Build(ItemType request)
