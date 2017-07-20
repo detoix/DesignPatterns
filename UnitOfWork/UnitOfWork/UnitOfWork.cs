@@ -26,11 +26,11 @@ namespace UnitOfWork.UnitOfWork
                 new Family() { Id = 1, Name = "L1" },
                 new Family() { Id = 2, Name = "L2" },
                 new Family() { Id = 3, Name = "L3" },
-                new Family() { Id = 3, Name = "L4" },
+                new Family() { Id = 4, Name = "L4" },
             };
 
             var toDelete = this.Families.GetFamilies().Where(e => !newCollection.Contains(e));
-            var toAdd = newCollection.Where(e => !this.Families.GetFamilies().Contains(e));
+            var toAdd = newCollection.Where(e => !this.Families.GetFamilies().Contains(e)); //select index as well
 
             foreach (var item in toDelete)
             {
@@ -39,14 +39,16 @@ namespace UnitOfWork.UnitOfWork
 
             foreach (var item in this.Families.GetFamilies())
             {
-                var toModify = newCollection.First(e => e.Id == item.Id);
+                var toModify = newCollection.FirstOrDefault(e => e.Id == item.Id);
+                if (toModify != null)
+                {
+
+                }
             }
 
-            int i = 0;
             foreach (var item in toAdd)
             {
-                this.Families.InsertAt(i);
-                i++;
+                //this.Families.InsertAt(i);
             }
 
             this.Families.Refresh();

@@ -8,7 +8,7 @@ namespace SimpleFactory
         static void Main(string[] args)
         {
             var itemA = new ItemFactory().Build(ItemType.ConcreteObjectA);
-            var itemB = new ItemFactory().Build(ItemType.ConcreteObjectB, 0);
+            var itemB = new ItemFactory().Build(ItemType.ConcreteObjectB, 0, string.Empty);
             itemA.SampleMethod();
             Console.Read();
         }

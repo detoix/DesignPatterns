@@ -1,4 +1,5 @@
 ﻿using SimpleFactory.Items;
+using System;
 using System.Collections.Generic;
 
 namespace SimpleFactory.Factories
@@ -9,30 +10,39 @@ namespace SimpleFactory.Factories
         ConcreteObjectB
     }
 
+    public struct ItemArguments
+    {
+        public int IntArg { get; set; }
+        public string StringArg { get; set; }
+    }
+
     public class ItemFactory : IItemFactory
     {
-        public IDictionary<ItemType, IItem> AvailableObjects { get; set; }
-        public int SampleParameter { get; set; }
+        public IDictionary<ItemType, Func<ItemArguments, IItem>> AvailableObjects { get; set; }
 
         public ItemFactory()
         {
-            this.AvailableObjects = new Dictionary<ItemType, IItem>()
+            this.AvailableObjects = new Dictionary<ItemType, Func<ItemArguments, IItem>>()
             {
-                { ItemType.ConcreteObjectA, new ConcreteItemA() },
-                { ItemType.ConcreteObjectB, new ConcreteItemB() },
+                { ItemType.ConcreteObjectA, arg => new ConcreteItemA(arg) },
+                { ItemType.ConcreteObjectB, arg => new ConcreteItemB(arg) },
             };
         }
 
         public IItem Build(ItemType request)
         {
-            return this.AvailableObjects[request];
+            return this.AvailableObjects[request](
+                new ItemArguments());
         }
 
-        public IItem Build(ItemType request, int arg)
+        public IItem Build(ItemType request, int intArg, string stringArg)
         {
-            var obj = this.AvailableObjects[request];
-                obj.SampleParameter = arg;
-            return obj;
+            return this.AvailableObjects[request](
+                new ItemArguments()
+                {
+                    IntArg = intArg,
+                    StringArg = stringArg
+                });
         }
     }
 }
