@@ -6,70 +6,40 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UnitOfWork.Items;
+using UnitOfWork.RevitUtils;
 
 namespace UnitOfWork.Repository
 {
-    public class FamilyRespository : IFamilyRepository
+    public class FamilyRespository : IRepository<RevitFamily>
     {
-        public IList<IFamily> Families { get; set; }
+        public IEnumerable<RevitFamily> RevitItems { get; set; }
+        public IDictionary<int, RevitFamily> Items { get; set; }
+        public IList<RevitFamily> AddedItems { get; set; }
+        public IList<RevitFamily> EditedItems { get; set; }
+        public IList<RevitFamily> DeletedItems { get; set; }
 
-        public FamilyRespository(IEnumerable<IFamily> families)
+        public FamilyRespository(IEnumerable<RevitFamily> revitItems)
         {
-            this.Families = families.ToList();
+            this.RevitItems = revitItems;
         }
 
-        public void Add(IFamily family)
+        public void Add(RevitFamily family)
         {
-            this.Families.Add(family);
+            this.AddedItems.Add(family);
         }
 
-        public void Delete(IFamily family)
+        public void Delete(int id)
         {
-            this.Families.Remove(family);
+            //this.DeletedItems.Add();
         }
 
-        public void RemoveAt(int id)
+        public RevitFamily Find(int id)
         {
-            this.Families.RemoveAt(id);
-            this.Refresh();
-        }
-
-        public void InsertAt(int id)
-        {
-            this.Families.Insert(id, new Family() { Id = 1, Name = "L1" });
-            this.Refresh();
-        }
-
-        public IFamily Find(int id)
-        {
-            return this.Families.ElementAt(id);
-        }
-
-        public IEnumerable<IFamily> GetFamilies()
-        {
-            return this.Families;
-        }
-
-        public void Update(IFamily family)
-        {
-            if (this.Families.Contains(family))
+            if (!this.Items.ContainsKey(id))
             {
-                //update
+                this.Items[id] = DocumentDB.GetElementById(id);
             }
-            else
-            {
-
-            }
-        }
-
-        public void Refresh()
-        {
-            int i = 1;
-            foreach (var family in this.Families)
-            {
-                family.Name = "L" + i.ToString();
-                i++;
-            }
+            return this.Items[id];
         }
     }
 }

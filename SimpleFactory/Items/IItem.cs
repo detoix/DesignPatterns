@@ -2,8 +2,7 @@
 {
     public interface IItem
     {
-        int IntParameter { get; set; }
-        string StringParameter { get; set; }
+        int Parameter { get; }
         void SampleMethod();
     }
 }

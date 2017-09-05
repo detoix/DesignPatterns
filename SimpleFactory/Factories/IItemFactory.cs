@@ -1,13 +1,12 @@
 ﻿using SimpleFactory.Items;
 using System;
 using System.Collections.Generic;
+using static SimpleFactory.Factories.ItemFactory;
 
 namespace SimpleFactory.Factories
 {
     public interface IItemFactory
     {
-        IDictionary<ItemType, Func<ItemArguments, IItem>> AvailableObjects { get; set; }
-
-        IItem Build(ItemType request, int intArg, string stringArg);
+        IItem Build(ItemType request, int arg);
     }
 }

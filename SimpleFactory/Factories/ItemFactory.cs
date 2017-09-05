@@ -10,39 +10,49 @@ namespace SimpleFactory.Factories
         ConcreteObjectB
     }
 
-    public struct ItemArguments
-    {
-        public int IntArg { get; set; }
-        public string StringArg { get; set; }
-    }
-
     public class ItemFactory : IItemFactory
     {
-        public IDictionary<ItemType, Func<ItemArguments, IItem>> AvailableObjects { get; set; }
-
-        public ItemFactory()
+        private static IItemFactory _Instance;
+        public static IItemFactory Instance
         {
-            this.AvailableObjects = new Dictionary<ItemType, Func<ItemArguments, IItem>>()
+            get
             {
-                { ItemType.ConcreteObjectA, arg => new ConcreteItemA(arg) },
-                { ItemType.ConcreteObjectB, arg => new ConcreteItemB(arg) },
-            };
+                if (_Instance == null)
+                    _Instance = new ItemFactory();
+
+                return _Instance;
+            }
         }
 
-        public IItem Build(ItemType request)
+        private ItemFactory()
         {
-            return this.AvailableObjects[request](
-                new ItemArguments());
+
         }
 
-        public IItem Build(ItemType request, int intArg, string stringArg)
+        public IItem Build(ItemType request, int arg)
         {
-            return this.AvailableObjects[request](
-                new ItemArguments()
-                {
-                    IntArg = intArg,
-                    StringArg = stringArg
-                });
+            switch (request)
+            {
+                case ItemType.ConcreteObjectA:
+                    return new ConcreteItemA(arg);
+                case ItemType.ConcreteObjectB:
+                    return new ConcreteItemB(arg);
+                default:
+                    return new EmptyItem(arg);
+            }
+        }
+
+        public IItem Build(ItemType request, int arg, string str)
+        {
+            switch (request)
+            {
+                case ItemType.ConcreteObjectA:
+                    return new ConcreteItemA(arg, str);
+                case ItemType.ConcreteObjectB:
+                    return new ConcreteItemB(arg, str);
+                default:
+                    return new EmptyItem(arg, str);
+            }
         }
     }
 }

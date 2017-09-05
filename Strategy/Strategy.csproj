@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{CFDC5D9F-4DE6-4FD6-BE3B-12B2086A6593}</ProjectGuid>
+    <ProjectGuid>{FB78C8E3-D4B5-4004-8850-CD1F4C93B913}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>SimpleFactory</RootNamespace>
-    <AssemblyName>SimpleFactory</AssemblyName>
+    <RootNamespace>Strategy</RootNamespace>
+    <AssemblyName>Strategy</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -42,15 +42,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Factories\IItemFactory.cs" />
-    <Compile Include="Factories\ItemFactory.cs" />
-    <Compile Include="Items\BaseItem.cs" />
-    <Compile Include="Items\ConcreteItemA.cs" />
-    <Compile Include="Items\ConcreteItemB.cs" />
-    <Compile Include="Items\EmptyItem.cs" />
-    <Compile Include="Items\IItem.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Strategies\ConcreteStrategyA.cs" />
+    <Compile Include="Strategies\ConcreteStrategyB.cs" />
+    <Compile Include="Strategies\IStrategy.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

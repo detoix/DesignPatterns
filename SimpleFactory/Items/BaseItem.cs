@@ -1,17 +1,15 @@
-﻿using SimpleFactory.Factories;
+﻿using static SimpleFactory.Factories.ItemFactory;
 using System.Linq;
 
 namespace SimpleFactory.Items
 {
     public abstract class BaseItem : IItem
     {
-        public int IntParameter { get; set; }
-        public string StringParameter { get; set; }
+        public int Parameter { get; }
 
-        public BaseItem(ItemArguments arg)
+        public BaseItem(int arg)
         {
-            this.IntParameter = arg.IntArg;
-            this.StringParameter = arg.StringArg;
+            this.Parameter = arg;
         }
 
         public abstract void SampleMethod();

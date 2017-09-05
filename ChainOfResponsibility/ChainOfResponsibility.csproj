@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{CFDC5D9F-4DE6-4FD6-BE3B-12B2086A6593}</ProjectGuid>
+    <ProjectGuid>{47F11DC1-DF04-48E6-85D0-00A4D230020B}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>SimpleFactory</RootNamespace>
-    <AssemblyName>SimpleFactory</AssemblyName>
+    <RootNamespace>ChainOfResponsibility</RootNamespace>
+    <AssemblyName>ChainOfResponsibility</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -42,18 +42,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Factories\IItemFactory.cs" />
-    <Compile Include="Factories\ItemFactory.cs" />
-    <Compile Include="Items\BaseItem.cs" />
-    <Compile Include="Items\ConcreteItemA.cs" />
-    <Compile Include="Items\ConcreteItemB.cs" />
-    <Compile Include="Items\EmptyItem.cs" />
-    <Compile Include="Items\IItem.cs" />
+    <Compile Include="Implementations\Specification.cs" />
+    <Compile Include="Implementations\Testable.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Interfaces\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

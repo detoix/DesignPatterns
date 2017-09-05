@@ -42,12 +42,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Items\Family.cs" />
+    <Compile Include="Items\RevitFamily.cs" />
     <Compile Include="Items\IFamily.cs" />
+    <Compile Include="Items\PrescientFamily.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\FamilyRespository.cs" />
-    <Compile Include="Repository\IFamilyRepository.cs" />
+    <Compile Include="Repository\IRepository.cs" />
+    <Compile Include="RevitUtils\DocumentDB.cs" />
     <Compile Include="UnitOfWork\IUnitOfWork.cs" />
     <Compile Include="UnitOfWork\UnitOfWork.cs" />
   </ItemGroup>

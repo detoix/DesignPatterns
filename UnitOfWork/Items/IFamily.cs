@@ -9,6 +9,7 @@ namespace UnitOfWork.Items
     public interface IFamily
     {
         int Id { get; set; }
-        string Name { get; set; }
+        bool Edited { get; set; }
+        RevitFamily RevitFamily { get; set; }
     }
 }

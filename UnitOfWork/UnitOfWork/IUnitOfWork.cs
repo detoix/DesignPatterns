@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UnitOfWork.Items;
 using UnitOfWork.Repository;
 
 namespace UnitOfWork.UnitOfWork
 {
-    public interface IUnitOfWork
+    public interface IUnitOfWork<T>
     {
-        IFamilyRepository Families { get; set; }
+        IRepository<T> Repository { get; set; }
         void Commit();
     }
 }

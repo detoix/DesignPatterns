@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace UnitOfWork.Items
 {
-    public class Family : IFamily
+    public class RevitFamily
     {
         public int Id { get; set; }
         public string Name { get; set; }

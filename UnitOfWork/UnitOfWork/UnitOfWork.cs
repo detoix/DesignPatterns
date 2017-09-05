@@ -8,50 +8,32 @@ using UnitOfWork.Repository;
 
 namespace UnitOfWork.UnitOfWork
 {
-    public class UnitOfWork : IUnitOfWork
+    public class UnitOfWork : IUnitOfWork<RevitFamily>
     {
-        public Context Context { get; set; }
-        public IFamilyRepository Families { get; set; }
+        public IRepository<RevitFamily> Repository { get; set; }
 
-        public UnitOfWork(Context context)
+        public UnitOfWork(IEnumerable<RevitFamily> families)
         {
-            this.Context = context;
-            this.Families = new FamilyRespository(context.Families);           
+            this.Repository = new FamilyRespository(families);           
+        }
+
+        public void Foo()
+        {
+            var f = new RevitFamily();
+            this.Repository.Add(f);
+
+            var items = this.Repository.Items
+                .Where(i => i.Key < 4);
+
+            this.Repository.Delete(2);
         }
 
         public void Commit()
         {
-            var newCollection = new List<IFamily>()
-            {
-                new Family() { Id = 1, Name = "L1" },
-                new Family() { Id = 2, Name = "L2" },
-                new Family() { Id = 3, Name = "L3" },
-                new Family() { Id = 4, Name = "L4" },
-            };
+            //foreach (var item in this.Repository)
+            //{
 
-            var toDelete = this.Families.GetFamilies().Where(e => !newCollection.Contains(e));
-            var toAdd = newCollection.Where(e => !this.Families.GetFamilies().Contains(e)); //select index as well
-
-            foreach (var item in toDelete)
-            {
-                this.Families.Delete(item);
-            }
-
-            foreach (var item in this.Families.GetFamilies())
-            {
-                var toModify = newCollection.FirstOrDefault(e => e.Id == item.Id);
-                if (toModify != null)
-                {
-
-                }
-            }
-
-            foreach (var item in toAdd)
-            {
-                //this.Families.InsertAt(i);
-            }
-
-            this.Families.Refresh();
+            //}
         }
     }
 }
