@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ChainOfResponsibility.Implementations
 {
-    class SpecificationAny
+    public class SpecificationAny
     {
         SpecificationAny Next { get; }
         Func<Testable, bool> Rule { get; }

@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DataItems>
+  <Minimum>
+    <Value>5.2</Value>
+  </Minimum>
+  <Maximum>
+    <Value>10.0</Value>
+  </Maximum>
+</DataItems>

@@ -12,6 +12,7 @@ namespace ChainOfResponsibility
         static void Main(string[] args)
         {
             var testable = new Testable();
+
             var specificaitonChain =
                 new SpecificationAny(e => false,
                     new SpecificationAny(e => false,

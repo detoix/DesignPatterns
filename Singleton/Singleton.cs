@@ -2,7 +2,7 @@
 {
     public class Singleton
     {
-        private static Singleton instance;
+        private static Singleton _Instance;
 
         private Singleton() { }
 
@@ -10,11 +10,11 @@
         {
             get
             {
-                if (instance == null)
+                if (_Instance == null)
                 {
-                    instance = new Singleton();
+                    _Instance = new Singleton();
                 }
-                return instance;
+                return _Instance;
             }
         }
     }

@@ -42,15 +42,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Implementations\Component.cs" />
-    <Compile Include="Implementations\ComponentSpecification.cs" />
-    <Compile Include="Interfaces\IComponent.cs" />
-    <Compile Include="Interfaces\ISpecification.cs" />
+    <Compile Include="Implementations\SpecificationForTestable.cs" />
+    <Compile Include="Implementations\Specification.cs" />
+    <Compile Include="Implementations\Testable.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Interfaces\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\resources.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ChainOfResponsibility.Implementations
 {
-    class Testable
+    public class Testable
     {
         public bool MeetsSpecification(SpecificationAny specificationChain)
         {
