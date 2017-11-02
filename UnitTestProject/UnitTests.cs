@@ -10,7 +10,7 @@ namespace UnitTestProject
         public void ConcreteSpecification_GivenItemOfValue10_ReturnsTrue()
         {
             var testable = new Testable { Number = 10 };
-            var result = SpecificationForTestable.Instance.IsSatisfiedBy(testable);
+            var result = StaticSpecificationForTestable.Instance.IsSatisfiedBy(testable);
             Assert.IsTrue(result);
         }
 
@@ -18,7 +18,7 @@ namespace UnitTestProject
         public void ConcreteSpecification_GivenItemOfValue11_ReturnsFalse()
         {
             var testable = new Testable { Number = 11 };
-            var result = SpecificationForTestable.Instance.IsSatisfiedBy(testable);
+            var result = StaticSpecificationForTestable.Instance.IsSatisfiedBy(testable);
             Assert.IsFalse(result);
         }
     }

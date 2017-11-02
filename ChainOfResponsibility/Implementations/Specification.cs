@@ -26,5 +26,10 @@ namespace ChainOfResponsibility.Implementations
         {
             return this.Rule(item) || this.Next.IsSatisfiedBy(item);
         }
+
+        public Testable CreateInstance()
+        {
+            return new Testable();
+        }
     }
 }

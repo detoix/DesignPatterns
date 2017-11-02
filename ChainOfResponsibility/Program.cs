@@ -19,8 +19,6 @@ namespace ChainOfResponsibility
                         new SpecificationAny(e => false
                             )));
 
-            var s = new SpecificationAny(e => true);
-
             var meetsSpecificaiton = testable.MeetsSpecification(specificaitonChain);
         }
     }

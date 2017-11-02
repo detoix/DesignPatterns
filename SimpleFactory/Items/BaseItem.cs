@@ -7,12 +7,15 @@ namespace SimpleFactory.Items
     {
         public int Parameter { get; }
 
+        public BaseItem()
+        {
+
+        }
+
         public BaseItem(int arg)
         {
             this.Parameter = arg;
         }
-
-        public abstract void SampleMethod();
 
         /// <summary>
         /// Get class name without namespace

@@ -10,6 +10,12 @@ namespace SimpleFactory.Factories
         ConcreteObjectB
     }
 
+    public enum System
+    {
+        _35,
+        _60,
+    }
+
     public class ItemFactory : IItemFactory
     {
         private static IItemFactory _Instance;

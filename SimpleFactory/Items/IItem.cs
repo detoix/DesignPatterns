@@ -3,6 +3,5 @@
     public interface IItem
     {
         int Parameter { get; }
-        void SampleMethod();
     }
 }

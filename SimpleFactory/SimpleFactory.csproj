@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Factories\DictionaryFactory.cs" />
     <Compile Include="Factories\IItemFactory.cs" />
     <Compile Include="Factories\ItemFactory.cs" />
     <Compile Include="Items\BaseItem.cs" />

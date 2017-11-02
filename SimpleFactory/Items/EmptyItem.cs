@@ -18,10 +18,5 @@ namespace SimpleFactory.Items
         {
 
         }
-
-        public override void SampleMethod()
-        {
-            
-        }
     }
 }

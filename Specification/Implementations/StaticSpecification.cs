@@ -4,16 +4,16 @@ using System.Linq;
 
 namespace Specification.Implementations
 {
-    public abstract class Specification<T>
+    public class StaticSpecification<T>
     {
         private readonly IList<Func<T, bool>> _Rules;
 
-        protected internal Specification()
+        protected internal StaticSpecification()
         {
             this._Rules = new List<Func<T, bool>>();
         }
 
-        protected internal Specification<T> AddRule(Func<T, bool> rule)
+        protected internal StaticSpecification<T> AddRule(Func<T, bool> rule)
         {
             this._Rules.Add(rule);
             return this;

@@ -1,5 +1,7 @@
 ﻿using SimpleFactory.Factories;
+using SimpleFactory.Items;
 using System;
+using System.Collections.Generic;
 
 namespace SimpleFactory
 {
@@ -9,8 +11,10 @@ namespace SimpleFactory
         {
             var itemA = ItemFactory.Instance.Build(ItemType.ConcreteObjectA, 12);
             var itemB = ItemFactory.Instance.Build(ItemType.ConcreteObjectB, 10);
-            itemA.SampleMethod();
-            Console.Read();
+
+            var dd = DictionaryFactory.Builder[Factories.System._35][ItemType.ConcreteObjectA](40);
+
+            Console.Read();            
         }
     }
 }

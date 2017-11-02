@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A811A43E-9961-426F-8FAB-D4A00C420DCD}</ProjectGuid>
+    <ProjectGuid>{FC036E84-F977-4847-86DF-1DC9C94EBD6C}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Specification</RootNamespace>
-    <AssemblyName>Specification</AssemblyName>
+    <RootNamespace>Builder</RootNamespace>
+    <AssemblyName>Builder</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -42,24 +42,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Implementations\Specification.cs" />
-    <Compile Include="Implementations\SpecificationForTestable.cs" />
-    <Compile Include="Implementations\StaticSpecificationForTestable.cs" />
-    <Compile Include="Implementations\StaticSpecification.cs" />
-    <Compile Include="Implementations\Testable.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Interfaces\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Resources\resources.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
