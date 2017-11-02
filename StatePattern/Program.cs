@@ -41,6 +41,18 @@ namespace StatePattern
             this._Levels.Last().AsMiddle();
             this._Levels.Add(level);
         }
+
+        public void ClassicAddLevel(Level level)
+        {
+            if (!this._Levels.Any())
+            {
+                this._Levels.Add(level.AsBottom());
+            }
+            else
+            {
+                this._Levels.Add(level.AsMiddle());
+            }
+        }
     }
 
     class Level
