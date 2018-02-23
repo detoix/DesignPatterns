@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.15
+VisualStudioVersion = 15.0.27130.2027
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleFactory", "SimpleFactory\SimpleFactory.csproj", "{CFDC5D9F-4DE6-4FD6-BE3B-12B2086A6593}"
 EndProject
@@ -20,6 +20,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestProject", "UnitTestProject\UnitTestProject.csproj", "{DC268FF8-27EA-4C46-957B-5C3B030EF744}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Builder", "Builder\Builder.csproj", "{FC036E84-F977-4847-86DF-1DC9C94EBD6C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExtensionMethods", "ExtensionMethods\ExtensionMethods.csproj", "{CB5E32C6-5AC9-4FBC-B7E8-9FB598CE0CBB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,8 +65,15 @@ Global
 		{FC036E84-F977-4847-86DF-1DC9C94EBD6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FC036E84-F977-4847-86DF-1DC9C94EBD6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FC036E84-F977-4847-86DF-1DC9C94EBD6C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CB5E32C6-5AC9-4FBC-B7E8-9FB598CE0CBB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CB5E32C6-5AC9-4FBC-B7E8-9FB598CE0CBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CB5E32C6-5AC9-4FBC-B7E8-9FB598CE0CBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CB5E32C6-5AC9-4FBC-B7E8-9FB598CE0CBB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {06A51AB4-B943-44C7-8647-414950E0791A}
 	EndGlobalSection
 EndGlobal
